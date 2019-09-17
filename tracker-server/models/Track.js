@@ -13,7 +13,7 @@ const pointSchema = new mongoose.Schema({
 })
 
 const trackSchema = new mongoose.Schema({
-    userID: {
+    userId: {
         type: mongoose.Schema.Types.ObjectId, 
         ref: 'User'
     },
