@@ -11,6 +11,18 @@ import TrackDetailScreen from './src/screens/TrackDetailScreen'
 
 
 const switchNavigator = createSwitchNavigator({
-  
-
+  loginFlow: createStackNavigator({
+    Signup: SignupScreen,
+    Signin: SigninScreen
+  }),
+  mainFlow: createBottomTabNavigator({
+      trackListFlow: createStackNavigator({
+        TrackList: TrackListScreen,
+        TrackDetail: TrackDetailScreen
+      }),
+      TrackCreate: TrackCreateScreen,
+      Account: AccountScreen
+    })
 })
+
+export default createAppContainer(switchNavigator)
