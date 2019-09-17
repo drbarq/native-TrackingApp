@@ -29,7 +29,7 @@ const SignupScreen = props => {
                 autoCorrect={false}
             />
             <Spacer>
-                <Button 
+                <Button
                     title="Sign Up"
                 />
             </Spacer>
