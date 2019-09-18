@@ -5,6 +5,8 @@ import { navigate } from '../navigationRef'
 
 const authReducer = (state, action) => {
     switch(action.type) {
+        case 'signout':
+            return { errorMessage: '', token: null }
         case 'signin':
             return { errorMessage: '', token: action.payload }
         case 'add_error':
@@ -63,10 +65,10 @@ const signin = dispach => {
     }
 }
 
-const signout = dispatch => {
-    return () => {
-        // somehow sign out 
-    }
+const signout = dispatch => async () => {
+    await AsyncStorage.removeItem('token')
+    dispatch({type: 'signout'})
+    navigate('loginFlow')
 }
 
 export const { Context, Provider } = createDataContext(
