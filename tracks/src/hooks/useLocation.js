@@ -3,7 +3,7 @@ import { Accuracy, requestPermissionsAsync, watchPositionAsync } from 'expo-loca
 
 export default ( shouldTrack, callback) => {
     const[err, setErr] = useState(null)
-    const [subscriber, setSubscriber] = useState(null)
+    const[subscriber, setSubscriber] = useState(null)
 
     const startWatching = async () => {
         try {
@@ -27,6 +27,11 @@ export default ( shouldTrack, callback) => {
         } else {
             subscriber.remove()
             setSubscriber(null)
+        }
+        return () => {
+            if (subscriber) {
+                subscriber.remove()
+            }
         }
     }, [shouldTrack, callback])
     
