@@ -1,4 +1,5 @@
-import '../_mockLocation'
+// import '../_mockLocation'
+// file that fakes gps movement
 import React, { useContext, useCallback } from 'react'
 import { StyleSheet } from 'react-native'
 import { Text } from 'react-native-elements'
