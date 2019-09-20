@@ -17,7 +17,9 @@ const TrackListScreen = props => {
                 keyExtractor={item => item._id}
                 renderItem={({ item }) => {
                     return (
-                        <TouchableOpacity>
+                        <TouchableOpacity 
+                            onPress={() => props.navigation.navigate('TrackDetail', {_id: item._id })}
+                        >
                             <ListItem chevron title={item.name}/>
                         </TouchableOpacity>
                     )
