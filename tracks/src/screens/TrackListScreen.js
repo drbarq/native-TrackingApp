@@ -11,7 +11,6 @@ const TrackListScreen = props => {
     return (
         <>
             <NavigationEvents onWillFocus={fetchTracks} />
-            <Text style={{fontSize: 48}}>Track List Screen</Text>
             <FlatList 
                 data={state}
                 keyExtractor={item => item._id}
@@ -27,6 +26,11 @@ const TrackListScreen = props => {
             />
         </>
     )
+}
+
+// header text label
+TrackListScreen.navigationOptions = {
+    title: 'Tracks'
 }
 
 const styles = StyleSheet.create({})
